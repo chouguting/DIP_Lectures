@@ -1,3 +1,15 @@
 import numpy as np
-D=np.array(([[0,128],[192,64]]))
-print("aa")
+from skimage import io
+from skimage import transform
+D=np.array([[12,6,5,13,14,14,16,15],
+             [11,10,8,5,8,11,14,14],
+             [9,8,3,4,7,12,18,19],
+            [10,7,4,2,10,12,13,17],
+            [16,9,13,13,16,19,19,17],
+            [12,10,14,15,18,18,16,14],
+            [11,8,10,12,14,13,14,15],
+            [8,6,3,7,9,11,12,12]
+             ])
+T=io.imread("rice.jpg")
+C = transform.rotate(T,45, order =0)
+io.imshow(T)
